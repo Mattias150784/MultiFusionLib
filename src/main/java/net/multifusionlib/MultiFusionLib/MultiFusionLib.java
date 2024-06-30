@@ -12,6 +12,10 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.multifusionlib.MultiFusionLib.fluid.ModFluidTypes;
+import net.multifusionlib.MultiFusionLib.fluid.ModFluids;
+import net.multifusionlib.MultiFusionLib.init.ModBlocks;
+import net.multifusionlib.MultiFusionLib.init.ModItems;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -19,7 +23,7 @@ import org.slf4j.Logger;
 public class MultiFusionLib
 {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "MultiFusionLib";
+    public static final String MOD_ID = "multifusionlib";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
@@ -29,7 +33,10 @@ public class MultiFusionLib
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
 
-
+        ModFluids.register(modEventBus);
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
     }
