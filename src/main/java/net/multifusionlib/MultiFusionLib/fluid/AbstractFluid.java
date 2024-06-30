@@ -229,6 +229,7 @@ public class AbstractFluid extends ForgeFlowingFluid implements IFluid {
         private boolean isPoisonous = false;
         private boolean isBuoyant = false;
         private boolean canExtinguishFire = false;
+        public boolean holy;
         private Supplier<? extends FluidType> fluidType;
         private Supplier<? extends Fluid> still;
         private Supplier<? extends Fluid> flowing;
@@ -294,6 +295,10 @@ public class AbstractFluid extends ForgeFlowingFluid implements IFluid {
 
         public ABSProperties canExtinguishFire(boolean canExtinguishFire) {
             this.canExtinguishFire = canExtinguishFire;
+            return this;
+        }
+        public ABSProperties isHoly(boolean isHoly){
+            this.holy = isHoly;
             return this;
         }
     }
