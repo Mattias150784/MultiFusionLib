@@ -157,12 +157,12 @@ public class AbstractFluid extends ForgeFlowingFluid implements IFluid {
     @Override
     public void tick(Level pLevel, BlockPos pPos, FluidState pState) {
         if (!pLevel.isClientSide()) {
-            if (this.canFreeze && this.getTemperature() <= 23) {
+            if (this.canFreeze() && this.getTemperature() <= 23) {
                 if (pLevel.isEmptyBlock(pPos.above())) {
                     pLevel.setBlockAndUpdate(pPos, Blocks.ICE.defaultBlockState());
                 }
             }
-            if (this.isPoisonous) {
+            if (this.isPoisonous()) {
                 pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(pPos)).forEach(entity -> entity.addEffect(new MobEffectInstance(MobEffects.POISON, 200, 0)));
             }
             if (this.isHoly()) {
