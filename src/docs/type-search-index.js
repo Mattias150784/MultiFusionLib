@@ -1,1 +1,1 @@
-typeSearchIndex = [{"p":"net.multifusionlib.MultiFusionLib.screen","l":"AbsMenu"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"net.multifusionlib.MultiFusionLib.pathfinding","l":"AStarPathfinder"}];updateSearchResults();

@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"net.multifusionlib.MultiFusionLib.screen"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"net.multifusionlib.MultiFusionLib.pathfinding"}];updateSearchResults();
