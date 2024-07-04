@@ -155,43 +155,4 @@ public class AStarPathfinder {
         return path;
     }
 
-    /**
-     * A class representing a node in the A* pathfinding algorithm.
-     */
-    private static class AStarNode {
-        BlockPos position;
-        AStarNode parent;
-        double gCost;
-        double hCost;
-        double fCost;
-
-        /**
-         * Constructs an AStarNode instance.
-         *
-         * @param position The position of the node.
-         * @param parent   The parent node.
-         * @param gCost    The cost from the start node to this node.
-         * @param hCost    The heuristic cost from this node to the goal node.
-         */
-        AStarNode(BlockPos position, AStarNode parent, double gCost, double hCost) {
-            this.position = position;
-            this.parent = parent;
-            this.gCost = gCost;
-            this.hCost = hCost;
-            this.fCost = gCost + hCost;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (this == obj) return true;
-            if (obj == null || getClass() != obj.getClass()) return false;
-            AStarNode aStarNode = (AStarNode) obj;
-            return position.equals(aStarNode.position);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(position);
-        }
-    }
 }
